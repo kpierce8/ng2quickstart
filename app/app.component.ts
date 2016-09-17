@@ -30,6 +30,9 @@ const HEROES: Hero[] = [
     background-color: #CFD8DC !important;
     color: white;
   }
+  .fright {
+      float:right;
+  }
   .heroes {
     margin: 0 0 2em 0;
     list-style-type: none;
@@ -75,17 +78,7 @@ const HEROES: Hero[] = [
   }
 `],
 
-    template: `
-    <h1>{{title}}</h1>
-    <h2> Hero list </h2>
-    <div>
-    <ul>
-        <li *ngFor="let hero of heroes">
-          <span class="badges">{{hero.id}}</span>  {{hero.name}}
-        </li>
-    </ul>
-    </div>
-    `
+    templateUrl: './app/app.component.html'
 })
 
 export class AppComponent {
@@ -94,7 +87,12 @@ export class AppComponent {
     //    id: 1,
     //    name: "Windstorm"
     //};
-heroes = HEROES;
+    heroes = HEROES;
+    selectedHero = Hero;
+
+onSelect(hero: Hero): void {
+  this.selectedHero = hero;
+}
 
 
  }
