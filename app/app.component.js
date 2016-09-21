@@ -15,11 +15,15 @@ var AppComponent = (function () {
         this.heroService = heroService;
         this.title = 'Tour of Heroes';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.getHeroes();
+    };
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
     AppComponent.prototype.getHeroes = function () {
-        this.heroes = this.heroService.getHeroes();
+        var _this = this;
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     AppComponent = __decorate([
         core_1.Component({
