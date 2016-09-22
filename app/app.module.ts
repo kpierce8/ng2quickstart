@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './hero.component';
+import { DashboardComponent } from './dashboard.component';
 import { HeroService } from './hero.service';
 
 import { AppComponent }  from './app.component';
@@ -17,7 +18,8 @@ import { routing }  from './app.routing';
     declarations: [ 
                     AppComponent,
                     HeroDetailComponent,
-                    HeroesComponent
+                    HeroesComponent,
+                    DashboardComponent
                  ],
     providers: [ HeroService],
     bootstrap: [ AppComponent ]
