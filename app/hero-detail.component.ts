@@ -33,6 +33,6 @@ export class HeroDetailComponent implements OnInit {
            this.heroService.update(this.hero).then(this.goBack);
        }
        
-   @Input()
+  // @Input()
     hero: Hero;
 }

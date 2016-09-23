@@ -17,7 +17,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             styleUrls: ['app/app.component.css'],
-            template: "\n    <h1>{{ title }}</h1>\n    <nav>\n    <a routerLink=\"/dashboard\"  routerLinkActive=\"active\">Dashboard</a>\n    <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <router-outlet></router-outlet>\n    "
+            template: "\n    <h1>{{ title }}</h1>\n    <nav>\n    <a routerLink=\"/dashboard\"  routerLinkActive=\"active\">Dashboard</a>\n    <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    </nav>\n    <h3>If I put a bunch of stuff here</h3>\n    <br/>\n    <br/>\n    <br/>\n    <br/>\n    <router-outlet></router-outlet>\n    <p> the router outlet is where the stuff from the router links goes</p>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

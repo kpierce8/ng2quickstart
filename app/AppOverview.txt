@@ -1,0 +1,32 @@
+angular-tour-of-heroes
+app
+app.component.ts
+app.component.css
+app.module.ts
+app.routing.ts
+dashboard.component.css
+dashboard.component.html
+dashboard.component.ts
+hero.ts
+hero-detail.component.css
+hero-detail.component.html
+hero-detail.component.ts
+hero-search.component.html (new)
+hero-search.component.css (new)
+hero-search.component.ts (new)
+hero-search.service.ts (new)
+rxjs-extensions.ts
+hero.service.ts
+heroes.component.css
+heroes.component.html
+heroes.component.ts
+main.ts
+in-memory-data.service.ts (new)
+node_modules ...
+typings ...
+index.html
+package.json
+styles.css
+systemjs.config.js
+tsconfig.json
+typings.json
