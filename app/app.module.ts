@@ -11,9 +11,11 @@ import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './hero.component';
 import { HeroDetailComponent }  from './hero-detail.component';
+import { HeroSearchComponent }  from './hero-search.component';
+//import { HeroSearchService }  from './hero-search.service';
 import { HeroService }          from './hero.service';
 import { routing }              from './app.routing';
-
+import './rxjs-extensions';
 
 
 @NgModule({
@@ -28,9 +30,11 @@ import { routing }              from './app.routing';
                     AppComponent,
                     HeroDetailComponent,
                     HeroesComponent,
-                    DashboardComponent
+                    DashboardComponent,
+                    HeroSearchComponent
+                    
                  ],
-    providers: [ HeroService],
+    providers: [ HeroService ],
     bootstrap: [ AppComponent ]
 
 })
