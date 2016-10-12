@@ -1,0 +1,19 @@
+    <div class="fright" *ngIf="selectedRestorationSite">
+        <h2>
+            {{selectedRestorationSite.name | uppercase}} is my hero
+        </h2>
+       
+    </div>
+ 
+    <h2> Restoration Sites </h2>
+    
+    <div>
+    <ul class="heroes">
+        <li *ngFor="let site of sites" 
+        [class.selected]="site === selectedRestorationSite"
+        (click)="onSelect(site)">
+          <span class="badge">{{site.Map_ID}}</span>  {{site.Action}}
+         
+        </li>
+    </ul>
+    </div>

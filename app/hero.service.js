@@ -20,7 +20,7 @@ var HeroService = (function () {
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json().data.theOtherHeroes; })
             .catch(this.handleError);
     };
     HeroService.prototype.getHero = function (id) {
