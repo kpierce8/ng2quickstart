@@ -2,6 +2,7 @@
 var router_1 = require('@angular/router');
 var hero_component_1 = require('./hero.component');
 var hero_detail_component_1 = require('./hero-detail.component');
+var restoration_detail_component_1 = require('./restoration-detail.component');
 var dashboard_component_1 = require('./dashboard.component');
 var restoration_component_1 = require('./restoration.component');
 var appRoutes = [
@@ -25,6 +26,10 @@ var appRoutes = [
     {
         path: 'restoration',
         component: restoration_component_1.RestorationComponent
+    },
+    {
+        path: 'site/:id',
+        component: restoration_detail_component_1.RestorationDetailComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

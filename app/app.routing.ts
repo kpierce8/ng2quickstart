@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HeroesComponent } from './hero.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { RestorationDetailComponent } from './restoration-detail.component';
 import { DashboardComponent } from './dashboard.component';
 import { RestorationComponent } from './restoration.component';
 
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
      {
         path: 'restoration',
         component: RestorationComponent
+    },
+    {
+        path: 'site/:id',
+        component: RestorationDetailComponent
     }
 ];
 

@@ -20,7 +20,7 @@ var RestorationService = (function () {
     RestorationService.prototype.getRestorationSites = function () {
         return this.http.get(this.RestorationSitesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json().data.sites; })
             .catch(this.handleError);
     };
     RestorationService.prototype.getRestorationSite = function (id) {

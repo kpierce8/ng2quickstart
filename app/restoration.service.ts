@@ -14,7 +14,7 @@ export class RestorationService {
     getRestorationSites(): Promise<RestorationSite[]> {
         return this.http.get(this.RestorationSitesUrl)
                 .toPromise()
-                .then(response => response.json().data as RestorationSite[])
+                .then(response => response.json().data.sites as RestorationSite[])
                 .catch(this.handleError);
     } 
     getRestorationSite(id: string): Promise<RestorationSite> {

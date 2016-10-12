@@ -27,7 +27,7 @@ var RestorationComponent = (function () {
         this.restorationService.getRestorationSites().then(function (sites) { return _this.sites = sites; });
     };
     RestorationComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedRestorationSite.Map_ID]);
+        this.router.navigate(['/site', this.selectedRestorationSite.Map_ID]);
     };
     RestorationComponent = __decorate([
         core_1.Component({

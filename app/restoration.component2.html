@@ -1,7 +1,10 @@
     <div class="fright" *ngIf="selectedRestorationSite">
         <h2>
-            {{selectedRestorationSite.name | uppercase}} is my hero
+            {{selectedRestorationSite.Map_ID | uppercase}} is my hero
         </h2>
+        <p>Notes: {{selectedRestorationSite.Polygon_Note}}</p>
+        <p>Year Completed: {{selectedRestorationSite.Year_Complete}}</p>
+        <p>Action: {{selectedRestorationSite.Action}}</p>
        
     </div>
  

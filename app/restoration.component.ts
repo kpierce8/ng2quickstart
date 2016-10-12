@@ -30,7 +30,7 @@ private restorationService: RestorationService) {}
     }
 
   gotoDetail(): void {
-    this.router.navigate([ '/detail', this.selectedRestorationSite.Map_ID]);
+    this.router.navigate([ '/site', this.selectedRestorationSite.Map_ID]);
   }
 
 //   add(name: string): void{

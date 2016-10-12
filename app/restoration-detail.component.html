@@ -1,0 +1,10 @@
+<div *ngIf="site">
+ <h2>{{site.Map_ID}} details!</h2>
+<div><label>id: </label>{{site.Map_ID}}</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="site.Action" placeholder="action"/>
+</div>
+<button (click)="goBack()">Back</button>
+<button (click)="save()">Save</button>
+</div>

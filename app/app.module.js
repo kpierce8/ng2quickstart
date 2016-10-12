@@ -14,12 +14,12 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-web-api.module');
 var in_memory_data_service_1 = require('./in-memory-data.service');
-//import { InMemoryDataService2 } from './in-memory-data.service2';
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_component_1 = require('./hero.component');
 var restoration_component_1 = require('./restoration.component');
 var hero_detail_component_1 = require('./hero-detail.component');
+var restoration_detail_component_1 = require('./restoration-detail.component');
 var hero_search_component_1 = require('./hero-search.component');
 //import { HeroSearchService }  from './hero-search.service';
 var hero_service_1 = require('./hero.service');
@@ -41,6 +41,7 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 hero_detail_component_1.HeroDetailComponent,
+                restoration_detail_component_1.RestorationDetailComponent,
                 hero_component_1.HeroesComponent,
                 dashboard_component_1.DashboardComponent,
                 restoration_component_1.RestorationComponent,
