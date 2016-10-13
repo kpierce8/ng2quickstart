@@ -15,6 +15,7 @@ var RestorationComponent = (function () {
     function RestorationComponent(router, restorationService) {
         this.router = router;
         this.restorationService = restorationService;
+        this.actions = [];
     }
     RestorationComponent.prototype.ngOnInit = function () {
         this.getRestorationSites();
@@ -23,9 +24,11 @@ var RestorationComponent = (function () {
         this.selectedRestorationSite = restorationSite;
     };
     RestorationComponent.prototype.getActions = function (sites) {
-        for (var site in sites) {
-            if (this.actions.indexOf(site) < 0)
-                this.actions.push(site);
+        console.log('there are ' + sites.length + ' sites');
+        for (var _i = 0, sites_1 = sites; _i < sites_1.length; _i++) {
+            var site = sites_1[_i];
+            if (this.actions.indexOf(site.Action) < 0)
+                this.actions.push(site.Action);
         }
         console.log(this.actions);
     };

@@ -12,7 +12,7 @@ import { RestorationService } from './restoration.service';
 
 export class RestorationComponent implements OnInit {
     sites: RestorationSite[];
-    actions: string[];
+    actions: string[] = [];
     selectedRestorationSite: RestorationSite;
 
 ngOnInit(): void {
@@ -27,9 +27,10 @@ private restorationService: RestorationService) {}
     }
 
 getActions(sites: RestorationSite[]): void {
-    for (var site in sites) {
-        if (this.actions.indexOf(site) < 0)     
-        this.actions.push(site);    
+    console.log('there are ' + sites.length + ' sites');
+    for (var site of sites) {
+        if (this.actions.indexOf(site.Action) < 0)     
+        this.actions.push(site.Action);    
     }
     console.log(this.actions);
 } 

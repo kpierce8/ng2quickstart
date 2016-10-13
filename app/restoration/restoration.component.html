@@ -9,7 +9,10 @@
     </div>
  
     <h2> Restoration Sites </h2>
-    
+    <select>
+         <option *ngFor="let action of actions">{{action}}</option>
+    </select>
+   
     <div>
     <ul class="heroes">
         <li *ngFor="let site of sites" 
