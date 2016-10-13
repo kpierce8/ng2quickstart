@@ -16,6 +16,7 @@ var RestorationComponent = (function () {
         this.router = router;
         this.restorationService = restorationService;
         this.actions = [];
+        this.selectedAction = "";
     }
     RestorationComponent.prototype.ngOnInit = function () {
         this.getRestorationSites();
@@ -23,8 +24,14 @@ var RestorationComponent = (function () {
     RestorationComponent.prototype.onSelect = function (restorationSite) {
         this.selectedRestorationSite = restorationSite;
     };
+    RestorationComponent.prototype.onActionSelect = function (action) {
+        this.selectedAction = action;
+        this.getFilteredRestorationSites();
+    };
     RestorationComponent.prototype.getActions = function (sites) {
         console.log('there are ' + sites.length + ' sites');
+        this.actions = [];
+        this.actions.push('All');
         for (var _i = 0, sites_1 = sites; _i < sites_1.length; _i++) {
             var site = sites_1[_i];
             if (this.actions.indexOf(site.Action) < 0)
@@ -36,8 +43,26 @@ var RestorationComponent = (function () {
         var _this = this;
         this.restorationService.getRestorationSites().then(function (sites) {
             _this.sites = sites;
+            _this.filteredSites = sites;
+            _this.actionCount = sites.length;
             _this.getActions(sites);
         });
+    };
+    RestorationComponent.prototype.getFilteredRestorationSites = function () {
+        if (this.selectedAction === 'All') {
+            this.getRestorationSites();
+        }
+        else {
+            this.filteredSites = [];
+            for (var _i = 0, _a = this.sites; _i < _a.length; _i++) {
+                var site = _a[_i];
+                if (site.Action === this.selectedAction) {
+                    this.filteredSites.push(site);
+                }
+            }
+        }
+        this.actionCount = this.filteredSites.length;
+        //this.getActions(sites);
     };
     RestorationComponent.prototype.gotoDetail = function () {
         this.router.navigate(['restoration/site', this.selectedRestorationSite.Map_ID]);

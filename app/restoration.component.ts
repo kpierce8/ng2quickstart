@@ -12,8 +12,11 @@ import { RestorationService } from './restoration.service';
 
 export class RestorationComponent implements OnInit {
     sites: RestorationSite[];
+    filteredSites: RestorationSite[];
     actions: string[] = [];
     selectedRestorationSite: RestorationSite;
+    selectedAction: string = "";
+    actionCount: number;
 
 ngOnInit(): void {
   this.getRestorationSites();
@@ -26,8 +29,17 @@ private restorationService: RestorationService) {}
     this.selectedRestorationSite = restorationSite;
     }
 
+
+onActionSelect(action: string): void {
+
+    this.selectedAction = action;
+this.getFilteredRestorationSites();
+}
+
 getActions(sites: RestorationSite[]): void {
     console.log('there are ' + sites.length + ' sites');
+    this.actions = [];
+    this.actions.push('All');
     for (var site of sites) {
         if (this.actions.indexOf(site.Action) < 0)     
         this.actions.push(site.Action);    
@@ -36,12 +48,29 @@ getActions(sites: RestorationSite[]): void {
 } 
  
   getRestorationSites(): void {
-    this.restorationService.getRestorationSites().then(sites => {
-        this.sites = sites
+    this.restorationService.getRestorationSites().then(sites => {   
+        this.sites = sites;     
+        this.filteredSites = sites;     
+        this.actionCount = sites.length;
         this.getActions(sites);
         });
     }
 
+    getFilteredRestorationSites(): void {
+        if(this.selectedAction === 'All'){
+            this.getRestorationSites();
+        }  else {
+            this.filteredSites = [];
+            for(var site of this.sites){
+                if (site.Action === this.selectedAction){
+                    this.filteredSites.push(site);
+                }
+            }
+        }
+        this.actionCount = this.filteredSites.length;
+        //this.getActions(sites);
+      
+    }
 
 
 

@@ -8,14 +8,14 @@
        
     </div>
  
-    <h2> Restoration Sites </h2>
-    <select>
-         <option *ngFor="let action of actions">{{action}}</option>
+    <h2> Restoration Sites {{actionCount}} sites listed</h2>
+    <select  #sel_action (change)="onActionSelect(sel_action.value)" >
+         <option *ngFor="let action of actions" [value] = "action" >{{action}}</option>
     </select>
    
     <div>
     <ul class="heroes">
-        <li *ngFor="let site of sites" 
+        <li *ngFor="let site of filteredSites" 
         [class.selected]="site === selectedRestorationSite"
         (click)="onSelect(site)">
           <span class="badge">{{site.Map_ID}}</span>  {{site.Action}}
