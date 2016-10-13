@@ -7,11 +7,12 @@ import { RestorationService } from './restoration.service';
 @Component({
     selector: 'my-sites',
     styleUrls: ['./app/hero.component.css'],
-    templateUrl: './app/restoration.component2.html',
+    templateUrl: './app/restoration/restoration.component.html',
 })
 
 export class RestorationComponent implements OnInit {
     sites: RestorationSite[];
+    actions: string[];
     selectedRestorationSite: RestorationSite;
 
 ngOnInit(): void {
@@ -25,12 +26,26 @@ private restorationService: RestorationService) {}
     this.selectedRestorationSite = restorationSite;
     }
 
+getActions(sites: RestorationSite[]): void {
+    for (var site in sites) {
+        if (this.actions.indexOf(site) < 0)     
+        this.actions.push(site);    
+    }
+    console.log(this.actions);
+} 
+ 
   getRestorationSites(): void {
-    this.restorationService.getRestorationSites().then(sites => this.sites = sites);
+    this.restorationService.getRestorationSites().then(sites => {
+        this.sites = sites
+        this.getActions(sites);
+        });
     }
 
+
+
+
   gotoDetail(): void {
-    this.router.navigate([ '/site', this.selectedRestorationSite.Map_ID]);
+    this.router.navigate([ 'restoration/site', this.selectedRestorationSite.Map_ID]);
   }
 
 //   add(name: string): void{

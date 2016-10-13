@@ -32,8 +32,8 @@ var RestorationDetailComponent = (function () {
     RestorationDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-restoration-detail',
-            templateUrl: './app/restoration-detail.component.html',
-            styleUrls: ['./app/restoration-detail.component.css']
+            templateUrl: './app/restoration/restoration-detail.component.html',
+            styleUrls: ['./app/restoration/restoration-detail.component.css']
         }), 
         __metadata('design:paramtypes', [restoration_service_1.RestorationService, router_1.ActivatedRoute])
     ], RestorationDetailComponent);

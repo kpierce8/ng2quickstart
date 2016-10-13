@@ -22,18 +22,28 @@ var RestorationComponent = (function () {
     RestorationComponent.prototype.onSelect = function (restorationSite) {
         this.selectedRestorationSite = restorationSite;
     };
+    RestorationComponent.prototype.getActions = function (sites) {
+        for (var site in sites) {
+            if (this.actions.indexOf(site) < 0)
+                this.actions.push(site);
+        }
+        console.log(this.actions);
+    };
     RestorationComponent.prototype.getRestorationSites = function () {
         var _this = this;
-        this.restorationService.getRestorationSites().then(function (sites) { return _this.sites = sites; });
+        this.restorationService.getRestorationSites().then(function (sites) {
+            _this.sites = sites;
+            _this.getActions(sites);
+        });
     };
     RestorationComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/site', this.selectedRestorationSite.Map_ID]);
+        this.router.navigate(['restoration/site', this.selectedRestorationSite.Map_ID]);
     };
     RestorationComponent = __decorate([
         core_1.Component({
             selector: 'my-sites',
             styleUrls: ['./app/hero.component.css'],
-            templateUrl: './app/restoration.component2.html',
+            templateUrl: './app/restoration/restoration.component.html',
         }), 
         __metadata('design:paramtypes', [router_1.Router, restoration_service_1.RestorationService])
     ], RestorationComponent);
