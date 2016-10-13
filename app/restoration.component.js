@@ -70,8 +70,8 @@ var RestorationComponent = (function () {
     RestorationComponent = __decorate([
         core_1.Component({
             selector: 'my-sites',
-            styleUrls: ['./app/hero.component.css'],
-            templateUrl: './app/restoration/restoration.component.html',
+            styleUrls: ['./app/restoration/restoration.component.css'],
+            templateUrl: './app/restoration/restoration.component2.html',
         }), 
         __metadata('design:paramtypes', [router_1.Router, restoration_service_1.RestorationService])
     ], RestorationComponent);

@@ -6,8 +6,8 @@ import { RestorationService } from './restoration.service';
 
 @Component({
     selector: 'my-sites',
-    styleUrls: ['./app/hero.component.css'],
-    templateUrl: './app/restoration/restoration.component.html',
+    styleUrls: ['./app/restoration/restoration.component.css'],
+    templateUrl: './app/restoration/restoration.component2.html',
 })
 
 export class RestorationComponent implements OnInit {

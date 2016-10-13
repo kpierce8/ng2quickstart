@@ -13,13 +13,17 @@
          <option *ngFor="let action of actions" [value] = "action" >{{action}}</option>
     </select>
    
-    <div>
-    <ul class="heroes">
-        <li *ngFor="let site of filteredSites" 
+  
+    <div class="grid grid-pad">
+        <div *ngFor="let site of filteredSites" 
         [class.selected]="site === selectedRestorationSite"
-        (click)="onSelect(site)">
-          <span class="badge">{{site.Map_ID}}</span>  {{site.Action}}
+        (click)="onSelect(site)"
+        class="col-1-4">
+        <div class="sites">
+             <span class="badge">{{site.Map_ID}}</span>  {{site.Action}}
+        </div>
          
-        </li>
-    </ul>
+         
+        </div>
     </div>
+    
