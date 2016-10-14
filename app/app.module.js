@@ -17,13 +17,13 @@ var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_component_1 = require('./hero.component');
-var restoration_component_1 = require('./restoration.component');
+var restoration_component_1 = require('./restoration/restoration.component');
 var hero_detail_component_1 = require('./hero-detail.component');
-var restoration_detail_component_1 = require('./restoration-detail.component');
+var restoration_detail_component_1 = require('./restoration/restoration-detail.component');
 var hero_search_component_1 = require('./hero-search.component');
 //import { HeroSearchService }  from './hero-search.service';
 var hero_service_1 = require('./hero.service');
-var restoration_service_1 = require('./restoration.service');
+var restoration_service_1 = require('./restoration/restoration.service');
 var app_routing_1 = require('./app.routing');
 require('./rxjs-extensions');
 var AppModule = (function () {
