@@ -1,8 +1,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HeroesComponent } from './hero.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { HeroesComponent } from './hero/hero.component';
+import { HeroDetailComponent } from './hero/hero-detail.component';
 import { RestorationDetailComponent } from './restoration/restoration-detail.component';
 import { DashboardComponent } from './dashboard.component';
 import { RestorationComponent } from './restoration/restoration.component';

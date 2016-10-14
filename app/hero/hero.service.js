@@ -9,12 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { HEROES } from './hero/mock-heroes';
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
         this.heroesUrl = 'app/heroes';
+        this.heroesPostUrl = 'app/heroes';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     HeroService.prototype.getHeroes = function () {
@@ -37,7 +39,7 @@ var HeroService = (function () {
     };
     HeroService.prototype.create = function (name) {
         return this.http
-            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.heroesPostUrl, JSON.stringify({ theOtherHeroes: [{ name: name }] }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);

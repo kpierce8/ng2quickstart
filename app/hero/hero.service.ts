@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+//import { HEROES } from './hero/mock-heroes';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class HeroService {
     private heroesUrl = 'app/heroes';
+    private heroesPostUrl = 'app/heroes';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http:Http) { }
@@ -34,7 +35,7 @@ export class HeroService {
 
     create(name: string): Promise<Hero>{
         return this.http
-            .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+            .post(this.heroesPostUrl, JSON.stringify({theOtherHeroes: [{name: name}]} ), {headers: this.headers})
             .toPromise()
             .then(res => res.json().data)
             .catch(this.handleError);

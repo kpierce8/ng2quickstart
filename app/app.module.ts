@@ -8,13 +8,13 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './hero.component';
+import { HeroesComponent }      from './hero/hero.component';
+import { HeroDetailComponent }  from './hero/hero-detail.component';
+import { HeroSearchComponent }  from './hero/hero-search.component';
+import { HeroSearchService }  from './hero/hero-search.service';
+import { HeroService }          from './hero/hero.service';
 import { RestorationComponent }      from './restoration/restoration.component';
-import { HeroDetailComponent }  from './hero-detail.component';
 import { RestorationDetailComponent }  from './restoration/restoration-detail.component';
-import { HeroSearchComponent }  from './hero-search.component';
-//import { HeroSearchService }  from './hero-search.service';
-import { HeroService }          from './hero.service';
 import { RestorationService }   from './restoration/restoration.service';
 import { routing }              from './app.routing';
 import './rxjs-extensions';
