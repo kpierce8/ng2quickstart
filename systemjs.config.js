@@ -24,7 +24,9 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-      "d3": "node_modules/d3/build/d3.min.js"
+      "d3": "node_modules/d3/build/d3.min.js",
+
+     
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -38,7 +40,8 @@
       'angular-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
-      }
+      },
+
     }
   });
 })(this);

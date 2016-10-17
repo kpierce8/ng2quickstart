@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
 import { InMemoryDataService } from './in-memory-data.service';
 
+
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './hero/hero.component';
@@ -17,6 +18,9 @@ import { RestorationComponent }      from './restoration/restoration.component';
 import { RestorationDetailComponent }  from './restoration/restoration-detail.component';
 import { RestorationService }   from './restoration/restoration.service';
 import { routing }              from './app.routing';
+
+
+
 import './rxjs-extensions';
 
 
